@@ -29,7 +29,7 @@
         <!--Test View Controller-->
         <scene sceneID="ggl-8q-MMD">
             <objects>
-                <viewController id="qST-l2-BpF" customClass="TestViewController" customModule="lmtest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Test" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qST-l2-BpF" customClass="TestViewController" customModule="lmtest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WSu-Ks-6HU"/>
                         <viewControllerLayoutGuide type="bottom" id="fXF-rO-SNp"/>

@@ -12,12 +12,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var textEdit: UITextField!
     
-    var delegate: TestDelegate? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +23,7 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func changeButtonPressed(sender: AnyObject) {
-        if (self.delegate != nil) {
-            let text = self.textEdit.text
-            self.delegate!.didTextChanged(text)
-        }
+        let sendText = ["text": self.textEdit.text]
+        NSNotificationCenter.defaultCenter().postNotificationName("menuNotification", object: nil, userInfo: sendText)
     }
 }

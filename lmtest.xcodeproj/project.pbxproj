@@ -10,7 +10,6 @@
 		5E083B701BA81561009B7A2C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E083B6F1BA81561009B7A2C /* MenuViewController.swift */; };
 		5E083B771BA81997009B7A2C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E083B761BA81997009B7A2C /* SWRevealViewController.m */; };
 		5E083B791BA81D61009B7A2C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E083B781BA81D61009B7A2C /* TestViewController.swift */; };
-		5EA9D9811BA821D7004DB535 /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9D9801BA821D7004DB535 /* TestDelegate.swift */; };
 		5EC0BBA01BA2CA2E00726D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0BB9F1BA2CA2E00726D1F /* AppDelegate.swift */; };
 		5EC0BBA21BA2CA2E00726D1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0BBA11BA2CA2E00726D1F /* ViewController.swift */; };
 		5EC0BBA51BA2CA2E00726D1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC0BBA31BA2CA2E00726D1F /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 		5E083B751BA81997009B7A2C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5E083B761BA81997009B7A2C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5E083B781BA81D61009B7A2C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		5EA9D9801BA821D7004DB535 /* TestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
 		5EC0BB9A1BA2CA2E00726D1F /* lmtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lmtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC0BB9E1BA2CA2E00726D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EC0BB9F1BA2CA2E00726D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				5E083B731BA81961009B7A2C /* SWRevealViewController */,
 				5E083B6F1BA81561009B7A2C /* MenuViewController.swift */,
 				5E083B781BA81D61009B7A2C /* TestViewController.swift */,
-				5EA9D9801BA821D7004DB535 /* TestDelegate.swift */,
 				5EC0BB9F1BA2CA2E00726D1F /* AppDelegate.swift */,
 				5EC0BBA11BA2CA2E00726D1F /* ViewController.swift */,
 				5EC0BBA31BA2CA2E00726D1F /* Main.storyboard */,
@@ -239,7 +236,6 @@
 			files = (
 				5E083B791BA81D61009B7A2C /* TestViewController.swift in Sources */,
 				5EC0BBA21BA2CA2E00726D1F /* ViewController.swift in Sources */,
-				5EA9D9811BA821D7004DB535 /* TestDelegate.swift in Sources */,
 				5E083B701BA81561009B7A2C /* MenuViewController.swift in Sources */,
 				5EC0BBA01BA2CA2E00726D1F /* AppDelegate.swift in Sources */,
 				5E083B771BA81997009B7A2C /* SWRevealViewController.m in Sources */,
