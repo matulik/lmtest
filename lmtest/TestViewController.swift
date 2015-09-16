@@ -15,11 +15,13 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        // Slide-menu
         if self.revealViewController() != nil {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        // 
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeTextHandler:", name: "menuNotification", object: nil)
     }
