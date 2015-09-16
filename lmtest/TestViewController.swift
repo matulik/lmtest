@@ -9,9 +9,13 @@
 import UIKit
 
 class TestViewController: UIViewController {
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var textLabel: UILabel! = UILabel()
+    @IBOutlet weak var textLabel1: UITextField!
+    @IBOutlet weak var textLabel2: UITextField!
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    var row : Int = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -21,13 +25,25 @@ class TestViewController: UIViewController {
             self.menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        // 
+        //
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeTextHandler:", name: "menuNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rowSelected:", name: "rowSelected", object: nil)
+        
+    }
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        if row >= 0 {
+            let textUserInfo = ["label1": self.textLabel1.text, "label2": self.textLabel2.text, "row": String(self.row)]
+            NSNotificationCenter.defaultCenter().postNotificationName("textLabelNotification", object: nil, userInfo: textUserInfo)
+            return
+        }
+        let textUserInfo = ["label1": self.textLabel1.text, "label2": self.textLabel2.text]
+        NSNotificationCenter.defaultCenter().postNotificationName("textLabelNotification", object: nil, userInfo: textUserInfo)
     }
     
-    func changeTextHandler(notification: NSNotification) {
-        let text = notification.userInfo!["text"] as! String
-        self.textLabel.text = text
+    func rowSelected(notification: NSNotification) {
+        let row_s = notification.userInfo!["row"] as! String
+        self.row = row_s.toInt()!
+        self.textLabel1.text = notification.userInfo!["label1"] as! String
+        self.textLabel2.text = notification.userInfo!["label2"] as! String
     }
 }
