@@ -10,6 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var testTableView: UITableView!
     var content = [[String]]()
     
@@ -21,6 +22,17 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func editButtonPressed(sender: AnyObject) {
+        if self.testTableView.editing == true {
+            self.testTableView.editing = false
+            self.editBarButton.title = "Edit"
+        }
+        else {
+            self.testTableView.editing = true
+            self.editBarButton.title = "Done"
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -42,6 +54,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.content.count
     }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.clearColor()
+        header.textLabel.text = "List"
+    }
+    
+    
     
     func addContentItem(notification: NSNotification) {
         let text = notification.userInfo!["label1"] as! String
