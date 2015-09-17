@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>382F34CC-6A36-4064-B725-0553C4974E14</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>lmtest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>560A334F581F5DDB161CA5C15A742AEB0B2BCBCD</key>
 		<string>https://github.com/matulik/lmtest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>lmtest.xcodeproj/project.xcworkspace</string>
+	<string>lmtest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>560A334F581F5DDB161CA5C15A742AEB0B2BCBCD</key>

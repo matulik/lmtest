@@ -40,12 +40,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let label1 = self.content[indexPath.row][0]
         let label2 = self.content[indexPath.row][1]
         let row = String(indexPath.row)
-        var data = ["label1": label1, "label2": label2, "row": row]
+        let data = ["label1": label1, "label2": label2, "row": row]
         NSNotificationCenter.defaultCenter().postNotificationName("rowSelected", object: nil, userInfo: data)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.testTableView.dequeueReusableCellWithIdentifier("cell") as! TestTableViewCell
+        let cell = self.testTableView.dequeueReusableCellWithIdentifier("cell") as! TestTableViewCell
         cell.titleLabel!.text = self.content[indexPath.row][0]
         cell.descLabel!.text = self.content[indexPath.row][1]
         return cell
@@ -58,7 +58,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor.clearColor()
-        header.textLabel.text = "List"
+        header.textLabel!.text = "List"
     }
     
     
@@ -67,10 +67,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let text = notification.userInfo!["label1"] as! String
         let desc = notification.userInfo!["label2"] as! String
         if let row_s = notification.userInfo!["row"] as? String {
-            let row = row_s.toInt()
+            let row = Int(row_s)!
             if row >= 0 {
-                self.content[row!][0] = text
-                self.content[row!][1] = desc
+                self.content[row][0] = text
+                self.content[row][1] = desc
                 self.testTableView.reloadData()
             }
             return
@@ -80,7 +80,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.content[self.content.count-1][0] = text
             self.content[self.content.count-1][1] = desc
             self.testTableView.reloadData()
-            println(content.count)
+            print(content.count)
         }
     }
 }

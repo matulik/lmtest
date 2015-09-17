@@ -32,18 +32,18 @@ class TestViewController: UIViewController {
     }
     @IBAction func addButtonPressed(sender: AnyObject) {
         if row >= 0 {
-            let textUserInfo = ["label1": self.textLabel1.text, "label2": self.textLabel2.text, "row": String(self.row)]
+            let textUserInfo = ["label1": self.textLabel1.text as! AnyObject, "label2": self.textLabel2.text as! AnyObject, "row": String(self.row) as AnyObject]
             NSNotificationCenter.defaultCenter().postNotificationName("textLabelNotification", object: nil, userInfo: textUserInfo)
             return
         }
-        let textUserInfo = ["label1": self.textLabel1.text, "label2": self.textLabel2.text]
+        let textUserInfo = ["label1": self.textLabel1.text as! AnyObject, "label2": self.textLabel2.text as! AnyObject]
         NSNotificationCenter.defaultCenter().postNotificationName("textLabelNotification", object: nil, userInfo: textUserInfo)
     }
     
     func rowSelected(notification: NSNotification) {
         let row_s = notification.userInfo!["row"] as! String
-        self.row = row_s.toInt()!
-        self.textLabel1.text = notification.userInfo!["label1"] as! String
-        self.textLabel2.text = notification.userInfo!["label2"] as! String
+        self.row = Int(row_s)!
+        self.textLabel1.text = (notification.userInfo!["label1"] as! String)
+        self.textLabel2.text = (notification.userInfo!["label2"] as! String)
     }
 }
